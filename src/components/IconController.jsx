@@ -26,25 +26,26 @@ function IconController() {
     localStorage.setItem("value", JSON.stringify(updatedValue));
   }, [color, size, icon]);
   return (
-    <div>
+    <div className="p-4 bg-gradient-to-tl from-green-100 via-white to-teal-100 shadow-md rounded-lg">
       <div>
         <IconList selectedIcon={(icon) => setIcon(icon)}/>
-        <div className="py-2">
-          <label className="p-2 flex justify-between items-center">
-            Size <span>{size} px</span>
-          </label>
-          <Slider
-            defaultValue={[size]}
-            max={512}
-            step={1}
-            onValueChange={(e) => setSize(e[0])}
-          />
-        </div>
+        <div className="py-4">
+      <label className="p-2 flex justify-between items-center text-gray-800 font-medium">
+        Size <span className="text-sm font-semibold text-gray-600">{size} px</span>
+      </label>
+      <Slider
+        defaultValue={[size]}
+        max={512}
+        step={1}
+        onValueChange={(e) => setSize(e[0])}
+        className="mt-2"
+      />
+    </div>
     
         <div className="py-2">
-          <label className="p-2 flex justify-between items-center">
-            Color picker
-          </label>
+        <label className="p-2 flex justify-between items-center text-gray-800 font-medium">
+        Color Picker
+      </label>
           <div>
             <ColorPicker
               value={color}

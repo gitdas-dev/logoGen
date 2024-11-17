@@ -44,7 +44,7 @@ function LogoPreview({ downloadIcon }) {
     return <LucidIcon color={color} size={size} />;
   };
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen lg:py-96 overflow-auto">
       <div
         className="w-[500px] h-[500px] bg-gray-300 outline-dotted outline-gray-300"
         style={{

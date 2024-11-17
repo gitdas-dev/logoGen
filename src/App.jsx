@@ -10,26 +10,28 @@ import { UpdateStorageContext } from "./context/UpdateStorageContext";
 function App() {
   const [selectIndex, setSelectIndex] = useState(0);
   const [updateStorage, setUpdateStorage] = useState({});
-  const [downloadIcon, setDownloadIcon] = useState()
+  const [downloadIcon, setDownloadIcon] = useState();
 
   return (
-    <UpdateStorageContext.Provider value={{updateStorage, setUpdateStorage}}>
-      <Header DowndloadIcon={setDownloadIcon}/>
-      <div className="w-64 fixed">
-        <SideNav
-          selectedIndex={(value) => {
-            setSelectIndex(value);
-          }}
-        />
-      </div>
-      <div className="ml-64 grid grid-cols-1 md:grid-cols-6 fixed w-full">
-        <div className="md:col-span-1 border h-screen shadow-sm p-5 overflow-auto ">
-          {selectIndex === 0 ? <IconController /> : <BackgroundController />}
+    <UpdateStorageContext.Provider value={{ updateStorage, setUpdateStorage }}>
+      <Header DowndloadIcon={setDownloadIcon} />
+
+      <div className="flex fixed w-full">
+        <div className="md:w-64">
+          <SideNav
+            selectedIndex={(value) => {
+              setSelectIndex(value);
+            }}
+          />
         </div>
-        <div className="md:col-span-3">
-          <LogoPreview downloadIcon={downloadIcon}/>
+        <div className="flex w-full">
+          <div className="border h-full shadow-sm p-5 overflow-auto w-auto lg:w-1/4">
+            {selectIndex === 0 ? <IconController /> : <BackgroundController />}
+          </div>
+          <div className="w-1/1 lg:w-3/4">
+            <LogoPreview downloadIcon={downloadIcon} />
+          </div>
         </div>
-        <div className="md:col-span-2">Adds banner</div>
       </div>
     </UpdateStorageContext.Provider>
   );
