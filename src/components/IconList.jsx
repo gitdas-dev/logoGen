@@ -64,7 +64,7 @@ function IconList({ selectedIcon }) {
                   <TabsTrigger value="color-icon">Colored Icons</TabsTrigger>
                 </TabsList>
                 <TabsContent value="icon">
-                  <div className="grid grid-cols-2 md:grid-cols-3  gap-2 overflow-auto h-[400px] p-6 scrollbar-hide">
+                  <div className="grid grid-cols-2 md:grid-cols-3  bg-slate-400gap-2 overflow-auto h-[400px] p-6 scrollbar-hide">
                     {iconList.map((icon, index) => (
                       <div
                         key={index}
