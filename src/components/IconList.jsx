@@ -58,13 +58,13 @@ function IconList({ selectedIcon }) {
           <DialogHeader>
             <DialogTitle>Select Icon from below</DialogTitle>
             <DialogDescription>
-              <Tabs defaultValue="icon" className="w-[400px]">
+              <Tabs defaultValue="icon" className="w-[300px]">
                 <TabsList>
                   <TabsTrigger value="icon">Icons</TabsTrigger>
                   <TabsTrigger value="color-icon">Colored Icons</TabsTrigger>
                 </TabsList>
                 <TabsContent value="icon">
-                  <div className="grid grid-cols-2 md:grid-cols-4  lg:grid-cols-5 gap-4 overflow-auto h-[400px] p-6 scrollbar-hide">
+                  <div className="grid grid-cols-2 md:grid-cols-3  gap-2 overflow-auto h-[400px] p-6 scrollbar-hide">
                     {iconList.map((icon, index) => (
                       <div
                         key={index}
@@ -81,7 +81,7 @@ function IconList({ selectedIcon }) {
                   </div>
                 </TabsContent>
                 <TabsContent value="color-icon">
-                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 overflow-auto scrollbar-hide h-[400px] p-6">
+                  <div className="grid grid-cols-2 md:grid-cols-3  gap-2 overflow-auto h-[400px] p-6 scrollbar-hide">
                     {pngIconList.map((icon, index) => (
                       <div
                         key={index}
